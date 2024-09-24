@@ -1,0 +1,1 @@
+gps | Format-Table Name, @{name='Virtual Ram(in MB)';e={$_.VM};FormatString='F2';Align='center'} -AutoSize | select -First 5
