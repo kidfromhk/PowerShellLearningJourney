@@ -1,0 +1,19 @@
+Above and beyond
+PowerShell v3 introduced a new “simplified” syntax for Where-Object. You can use
+it only when you’re doing a single comparison; if you need to compare multiple items,
+you still have to use the original syntax, which is what you’ve seen in this section.
+
+Folks debate whether or not this simplified syntax is helpful. It looks something like
+this:
+Get-Process | where WorkingSet -gt 100MB
+
+Obviously, that’s a bit easier to read: it dispenses with the curly brackets {} and
+doesn’t require the use of the awkward-looking $_ placeholder. But this new syntax
+doesn’t mean you can forget about the old syntax, which you still need for morecomplex comparisons:
+
+Get-Process | Where-Object {$_.WorkingSet -gt 100MB -and $_.CPU -gt 100}
+
+What’s more, there are years’ worth of examples out on the internet that all use the
+old syntax, which means you have to know it to use them. You also have to know the
+new syntax, because it will now start cropping up in developers’ examples. Having to
+know two sets of syntax isn’t exactly “simplified,” but at least you know what’s what
