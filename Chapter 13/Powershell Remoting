@@ -1,0 +1,8 @@
+You’ve already learned that PowerShell cmdlets all produce objects as their output.
+When you run a remote command, its output objects need to be put into a form that
+can be easily transmitted over a network. XML, it turns out, is an excellent way to do
+that, so PowerShell automatically serializes those output objects into XML. The XML is
+transmitted across the network and is then deserialized on your computer back into
+objects that you can work with inside PowerShell. Serialization and deserialization are
+really just a form of format conversion: from objects to XML (serialization), and from
+XML to objects (deserialization). 
